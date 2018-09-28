@@ -1,0 +1,7 @@
+{
+    // 控制编辑器是否应在键入后自动设置行的格式
+    "editor.formatOnType": true,
+    "files.autoSave": "afterDelay",
+    // When enabled, Emmet abbreviations are expanded when pressing TAB.
+    "emmet.triggerExpansionOnTab": true
+}
