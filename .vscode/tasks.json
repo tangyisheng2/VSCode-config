@@ -30,7 +30,34 @@
                     "\"${file}\"",
                     "--std=c++11",
                     "-o",
-                    "\"${fileDirname}\\${fileBasenameNoExtension}.exe\""
+                    "\"${fileDirname}\\bin\\${fileBasenameNoExtension}.exe\""
+                ]
+            }
+        }
+        {
+            "label": "build_OJ",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "windows": {
+                "command": "gcc",
+                "args": [
+                    "-ggdb",
+                    "-DONLINE_JUDGE",
+                    "-w",
+                    "-fmax-errors=3",
+                    "-std=c11",
+                    "\"${file}\"",
+                    "-o",
+                    "\"${fileDirname}\\bin\\${fileBasenameNoExtension}.exe\""
                 ]
             }
         }

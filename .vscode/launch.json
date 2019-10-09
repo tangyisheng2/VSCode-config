@@ -9,17 +9,39 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "(gdb) Launch",
             "preLaunchTask": "build",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": true,   //Debug时打开新的控制台
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe", // GDB的路径，注意替换成自己的路径
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+        {
+            "name": "(gdb) Launch for OJ",
+            "preLaunchTask": "build_OJ",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,   //Debug时打开新的控制台
             "MIMode": "gdb",
             "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe", // GDB的路径，注意替换成自己的路径
             "setupCommands": [
