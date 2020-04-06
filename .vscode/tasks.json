@@ -5,8 +5,6 @@
 // ${fileDirname}: the current opened file's dirname    
 // ${fileExtname}: the current opened file's extension  
 // ${cwd}: the current working directory of the spawned process
-
-
 {
     "version": "2.0.0",
     "tasks": [
@@ -33,7 +31,7 @@
                     "\"${fileDirname}\\bin\\${fileBasenameNoExtension}.exe\""
                 ]
             }
-        }
+        },
         {
             "label": "build_OJ",
             "type": "shell",
@@ -60,7 +58,28 @@
                     "\"${fileDirname}\\bin\\${fileBasenameNoExtension}.exe\""
                 ]
             }
+        },
+        {
+            "type": "shell",
+            "label": "clang build active file",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-std=c11",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
-
